@@ -1,0 +1,81 @@
+
+
+.wrapper {
+    max-width: 750px;
+
+    margin: 80px auto;
+    padding: 40px 30px 30px 30px;
+    background-color: #ecf0f3;
+    border-radius: 15px;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+    height: fit-content;
+}
+
+button{
+    width: 100%;
+}
+table{
+    font-weight: 100;
+    font-size: small;
+}
+i{
+    margin: 2px;
+}
+
+.pageNow{
+    background-color: #93a1af;
+    color: aliceblue;
+  }
+
+@media(max-width: 380px) {
+    .wrapper {
+        margin: 30px 20px;
+        padding: 40px 15px 15px 15px;
+    }
+}
+  /*laptops, desktops*/
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    table{
+        font-weight: 100;
+        font-size: smaller;
+    }
+  }
+  
+  /*tablets, ipads (portrait)*/
+  @media (min-width: 768px) and (max-width: 1024px){
+    table{
+        font-weight: 100;
+        font-size: x-small;
+    }
+  }
+  
+  /*tablets, ipads (landscape)*/
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+    table{
+        font-weight: 100;
+        font-size: x-small;
+    }
+  }
+  
+  /*low resolution tablets, mobiles (landscape)*/
+  @media (min-width: 481px) and (max-width: 767px){
+    table{
+        font-weight: 100;
+        font-size: 60%;
+    }
+  }
+  
+  /*smartphones mobiles (portrait)*/
+  @media (min-width: 320px) and (max-width: 480px){
+    table{
+        font-weight: 100;
+        font-size: 30%;
+    }
+  }
+
+  @media (min-width: 20px) and (max-width: 320px){
+    table{
+        font-weight: 100;
+        font-size: 20%;
+    }
+  }

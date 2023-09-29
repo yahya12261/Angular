@@ -1,0 +1,155 @@
+.textBlur {
+  color: transparent;
+  text-shadow: 0 0 1px #202122;
+}
+
+.navbar {
+  box-shadow: none;
+}
+
+a:hover {
+  color: red !important;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+
+}
+
+.box-shadow {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img-fluid {
+  height: 300px !important;
+}
+
+a.page-link:hover {
+  cursor: pointer;
+}
+
+
+.cart::after {
+  display: none !important;
+}
+
+.dropdown-menu{
+  top: 100%;
+  left: unset !important;
+  right: 0px !important;
+  margin-top: var(--bs-dropdown-spacer);
+}
+.CartContainer {
+  width: 300px;
+  padding: 5px;
+}
+
+.searchGroup {
+
+  justify-content: center;     
+  height: 100%;
+
+}
+.searchInput{
+  align-self:flex-start;
+  flex-grow:1;
+}
+.dropDown{
+  align-self:flex-end;
+  flex-grow:1;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.faIconSearch{
+  align-self:flex-start;
+  flex-grow:0;
+  margin-left: 2px;
+}
+/*desktops - higher resolution*/
+@media (min-width: 1281px){
+  .faIconSearch{
+    align-self:flex-start;
+    flex-grow:0;
+    margin-left: 2px;
+  }
+}
+
+
+
+/*laptops, desktops*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .faIconSearch{
+    align-self:flex-start;
+    flex-grow:0;
+    margin-left: 2px;
+
+  }
+  .dropDown{
+    align-self:flex-end;
+    flex-grow:1;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
+/*tablets, ipads (portrait)*/
+@media (min-width: 768px) and (max-width: 1024px){
+  .faIconSearch{
+    align-self:flex-start;
+    flex-grow:0;
+    margin-left: 15px;
+  }
+  .dropDown{
+    align-self:flex-end;
+    flex-grow:1;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+}
+
+/*tablets, ipads (landscape)*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+  .faIconSearch{
+    align-self:flex-start;
+    flex-grow:0;
+    margin-left: 15px;
+    
+  }
+  .dropDown{
+    align-self:flex-end;
+    flex-grow:1;
+    max-height:160px;
+    overflow-y: auto;
+  }
+}
+
+/*low resolution tablets, mobiles (landscape)*/
+@media (min-width: 481px) and (max-width: 767px){
+  .faIconSearch{
+    align-self:flex-start;
+    flex-grow:0;
+    margin-left: 15px;
+  }
+  .dropDown{
+    align-self:flex-end;
+    flex-grow:1;
+    max-height:140px;
+    overflow-y: auto;
+  }
+}
+
+/*smartphones mobiles (portrait)*/
+@media (min-width: 320px) and (max-width: 480px){
+  .faIconSearch{
+    align-self:flex-start;
+    flex-grow:0;
+    margin-left: 15px;
+  }
+  .dropDown{
+    align-self:flex-end;
+    flex-grow:1;
+    max-height:120px;
+    overflow-y: auto;
+  }
+}

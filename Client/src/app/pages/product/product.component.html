@@ -1,0 +1,25 @@
+<div class="col-lg-12 pt-1 at-container" >
+    <div class="box-shadow mt-5 at-item">
+      <div class="card">
+        <img class="img-fluid" src="{{getProductImage(product.imageId)}}" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">
+            <span class="text-danger fw-semibold me-2">{{product.price.value}} {{product.price.currency}}</span>
+            <!-- <del>400$</del> -->
+            <span class="text-success ms-2">{{product.category}}</span>
+          </p>
+          <p class="card-text">{{product.description}}</p>
+          <div class="row">
+            <div class="col-6">
+              <i class="fa-solid fa-star-half-stroke m-0" style="color: #6c6c6a;"></i>
+              <span class="text-muted">{{product.views}}</span>
+            </div>
+            <div class="col-6 text-end">
+              <button class="btn btn-sm btn-success">Order Now </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

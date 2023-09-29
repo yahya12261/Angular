@@ -1,0 +1,92 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="wrapper">
+  <form class="form-group" (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm"
+  novalidate>
+      <div class="conteiner">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label  class="form-label">Product Name*</label>
+                    <input type="text" class="form-control"
+                    name="name"
+                    [(ngModel)]="form.name"
+                    required
+                    #name="ngModel"
+                    > 
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label  class="form-label">Brand Name*</label>
+                    <input type="text" class="form-control"       
+                    name="brand"
+                    [(ngModel)]="form.brand"
+                    required
+                    #brand="ngModel"> 
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label  class="form-label">Price*</label>
+                    <input type="text" class="form-control" 
+                    name="price"
+                    [(ngModel)]="form.price"
+                    required
+                    #price="ngModel"
+                    > 
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label  class="form-label">Corrency*</label>
+                    <input type="text" class="form-control"
+                    name="corrency"
+                    [(ngModel)]="form.corrency"
+                    required
+                    #corrency="ngModel"
+                    > 
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label  class="form-label">Category*</label>
+                    <select class="form-select"       name="category"
+                    [(ngModel)]="form.category"
+                    required
+                    #category="ngModel">
+                        <option class="form-field" *ngFor="let category of categoryList" [value]="category.name">{{category.name}}</option>
+                    </select> 
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <label  class="form-label">Product Image*</label>
+            <div class="input-group mt-1 mb-3">  
+                <input type="file" class="form-control" id="inputGroupFile02" accept="image/*" (change)="selectFiles($event)"
+              
+                >
+              </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="description"
+                [(ngModel)]="form.description"
+                required
+                #description="ngModel">></textarea>
+                <label for="floatingTextarea2">description*</label>
+              </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary mt-2" [class.disabled]="!f.form.valid">Submit</button>
+              </div>
+        </div>
+        
+      </div>  
+    
+  </form>
+
+</div>

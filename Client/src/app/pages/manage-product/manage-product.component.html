@@ -1,0 +1,68 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="wrapper">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Price</th>
+            <!-- <th scope="col">createdBy</th> -->
+            <th scope="col">date</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productList ; let i = index ">
+            <th scope="row">{{product.productId}}</th>
+            <td >
+                <div class="form-group row" *ngIf="editIndex==i">
+                    <div  class="col-12">Name<input class="form-control" type="text" [(ngModel)]="nameEditText">
+                    </div></div>
+                <div *ngIf="editIndex!=i">
+                {{product.name}}
+            </div>
+            </td>
+            <td >{{product.category}}</td>
+            <td >{{product.brand}}</td>
+            <td >
+                <div class="form-group row" *ngIf="editIndex==i">
+                    <div  class="col-6">Value<input class="form-control" type="text" [(ngModel)]="priceEditText"></div>
+                    <div class="col-6">Corrency<input class="form-control" type="text" [(ngModel)]="correncyEditText"></div>
+                
+                </div>
+                <div *ngIf="editIndex!=i">
+                {{product.price.value}} {{product.price.currency}}
+            </div >
+            </td>
+            <!-- <td >{{product.createdBy}}</td> -->
+            <td >{{product.createdAt|date:'yy-MM-dd' }}</td>
+            <td >
+                <div *ngIf="editIndex!=i">
+                <a (click)="setVisible(product.productId,0)" *ngIf="product.visible==1"><i  class="fa-regular fa-eye-slash" style="color: green;"></i></a>
+               <a (click)="setVisible(product.productId,1)" *ngIf="product.visible==0" > <i  class="fa-regular fa-eye-slash" style="color: red;"></i></a>
+               <a (click)="enterEditMode(product,i)"> <i class="fa-solid fa-pen-to-square" ></i></a>
+                <a (click)="deleteProduct(product.productId)"><i class="fa-solid fa-delete-left"></i></a>
+            </div>
+            <div *ngIf="editIndex==i">
+                <button class="btn btn-success" (click)="saveEdit(product)">Save</button>
+            </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example ">
+        <ul class="pagination justify-content-center btn-success">
+          <li class="page-item" [class.disabled] = "pageNow == 1">
+            <a class="page-link btn-success" (click)="getPage(pageNow-1)">Previous</a>
+          </li>
+          <li class="page-item" *ngFor="let page of getRange(pageCount)"><a class="page-link" [class.pageNow]="pageNow == page" (click)="getPage(page)">{{page}}</a></li>
+
+          <li class="page-item" [class.disabled] = "pageNow == pageCount">
+            <a class="page-link" (click)="getPage(pageNow+1)">Next</a>
+          </li>
+        </ul>
+      </nav>
+
+</div>

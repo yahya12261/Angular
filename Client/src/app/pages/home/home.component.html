@@ -1,0 +1,104 @@
+<section id="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="productHeading text-center">
+                    <h2 class="mb-3">Exclusive Products</h2> 
+                    <ul class="list-unstyled d-flex   justify-content-center">                                
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle fw-semibold text-uppercase  me-1 text-danger" href="#"
+                              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                              {{categoryLabel}}
+                            </a>
+                            <ul class="dropdown-menu dropDown" aria-labelledby="navbarDropdown" >
+                              <li *ngFor="let category of categoryList">
+                                <a class="dropdown-item" (click)="getProductByCategory(category)">{{category.name}}</a>
+                              </li>
+                          
+                            </ul>
+                          </li>
+                          <li class="nav-item dropdown ms-3">
+                            <a class="nav-link dropdown-toggle fw-semibold text-uppercase  me-1 text-danger" href="#"
+                              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              {{brandLabel}}
+                            </a>
+                            <ul class="dropdown-menu dropDown" aria-labelledby="navbarDropdown">
+                              <li *ngFor="let brand of Brands">
+                                <a class="dropdown-item" (click)="getProductByBrand(brand)">{{brand}}</a>
+                              </li>
+                           
+                            </ul>
+                          </li>
+
+
+                          <li class="nav-item dropdown ms-3">
+                            <a class="nav-link dropdown-toggle fw-semibold text-uppercase  me-1 text-danger" href="#"
+                              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              sort By
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" (click)="SortBy('+')">ascending Price <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></a>        
+                            </li>
+                              <li><a class="dropdown-item" (click)="SortBy('-')">descending Price <i class="fa fa-sort-numeric-desc" aria-hidden="true"></i></a></li>
+                            </ul>
+                          </li>
+                   
+                    </ul>  
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-lg-3 pt-1 at-container" *ngFor="let product of productList">
+                        <div class="box-shadow mt-5 at-item">
+                            <div class="card ">
+                              
+                                <img class="img-fluid"  src="{{getProductImage(product.imageId)}}"
+                                    alt="...">
+                                    
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">{{product.name}}</h5>
+                                    <p class="card-text"><span
+                                            class="text-danger fw-semibold me-2">{{product.price.value.valueOf() | currency : product.price.currency+' ' }}</span> 
+                                            <!-- <del>400$</del>-->
+
+                                        <span class="text-success ms-2">{{product.category}}</span></p> 
+                                     
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <i class="fa-solid fa-star-half-stroke  m-0"
+                                                style="color: #6c6c6a;"></i> 
+                                                <span class="text-muted">{{product.views}}</span>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <button class="btn btn-sm btn-success" (click)="sendProduct(product)"> Show Details</button>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="mt-5">
+                    <nav aria-label="Page navigation example ">
+                      <ul class="pagination justify-content-center btn-success">
+                        <li class="page-item" [class.disabled] = "pageNow == 1">
+                          <a class="page-link btn-success" (click)="getPage(pageNow-1)">Previous</a>
+                        </li>
+                        <li class="page-item" *ngFor="let page of getRange(pageCount)"><a class="page-link" [class.pageNow]="pageNow == page" (click)="getPage(page)">{{page}}</a></li>
+              
+                        <li class="page-item" [class.disabled] = "pageNow == pageCount">
+                          <a class="page-link" (click)="getPage(pageNow+1)">Next</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                
+            </div>
+            
+        </div>
+ 
+    </div>
+
+</section>

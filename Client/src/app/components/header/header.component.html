@@ -1,0 +1,47 @@
+<header>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom border-top ">
+      <div class="container">
+        <a class="navbar-brand fs-2 fw-bold"  (click)="headerNavigator('login')">
+            <i class="fa fa-cart-shopping fs-2 me-2"
+            style="color: #f54242;"></i>
+            <span class="textBlur">Electro<strong>.Tech</strong></span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <!--Toggle  -->
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Nav Items -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0  text-center ">
+
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-uppercase  me-1 text-danger" style="cursor: pointer; " (click)="headerNavigator('home')">
+
+                home
+              </a>     
+           </li>
+
+            <li class="nav-item  fw-semibold text-uppercase text-black  me-1">
+              <a class="nav-link  fw-semibold text-uppercase text-black  me-1" href="#"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="headerNavigator('about-us')">
+                About us
+              </a>            
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-uppercase text-black  me-1" href="#">Contact us  </a>
+            </li>
+            
+           <li class="nav-item ms-5">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn btn-outline-success" type="button" id="button-addon2"><i class="fa fa-search fa-2" ></i></button>
+            </div>
+           </li>
+           
+          </ul> 
+        </div>
+      </div>
+    </nav>
+  </header>
