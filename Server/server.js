@@ -13,7 +13,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-mongoose.connect('mongodb://127.0.0.1:27017/eCommerce', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://yahyaStu:123123ya@cluster0.u2gdpfi.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp', { useNewUrlParser: true, useUnifiedTopology: true })
 .then((conn) => {
     // console.log(conn);
     console.log('DB Connection Successful');
