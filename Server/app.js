@@ -15,7 +15,9 @@ app.use(cors());
 app.options("*", cors());
 
 const corsOptions = {
-  origin: "http://localhost:4200",
+    origin: "http://localhost:4200",
+  origin: "http://localhost:4201",
+    origin: "192.168.1.11",
 };
 
 app.use(function (req, res, next) {
