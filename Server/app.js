@@ -15,7 +15,7 @@ app.use(cors());
 app.options("*", cors());
 
 const corsOptions = {
-    origin: "192.168.1.11:4200",
+    origin: "*",
 };
 
 app.use(function (req, res, next) {
